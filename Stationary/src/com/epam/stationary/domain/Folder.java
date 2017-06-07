@@ -1,6 +1,6 @@
 package com.epam.stationary.domain;
 
-public class Folder implements StarterKit,Comparable<Folder>{
+public class Folder implements StarterKit{
 	 private String name;
 	 
 	 private int price;
@@ -28,11 +28,5 @@ public class Folder implements StarterKit,Comparable<Folder>{
 		this.price = price;
 	}
 	
-	public int compareTo(Folder o) {
-		return (int) (this.price - o.price);
-	}
-
-	public String toString() {
-	    return "[name=" + this.name + ", price=" + this.price + "]";
-	}
+	
 }

@@ -1,6 +1,6 @@
 package com.epam.stationary.domain;
 
-public class StickNotes implements StarterKit,Comparable<StickNotes>{
+public class StickNotes implements StarterKit{
 	 private String name;
 	 
 	 private int price;
@@ -26,12 +26,5 @@ public class StickNotes implements StarterKit,Comparable<StickNotes>{
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	@Override
-	public int compareTo(StickNotes o) {
-		return (int) (this.price - o.price);
-	}
-
-	public String toString() {
-	    return "[name=" + this.name + ", price=" + this.price + "]";
-	}
+	
 }

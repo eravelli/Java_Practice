@@ -1,6 +1,6 @@
 package com.epam.stationary.domain;
 
-public class Pencil implements StarterKit,Comparable<Pencil>{
+public class Pencil implements StarterKit{
 	 private String name;
 	 
 	 private int price;
@@ -26,11 +26,5 @@ public class Pencil implements StarterKit,Comparable<Pencil>{
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public int compareTo(Pencil o) {
-		return (int) (this.price - o.price);
-	}
-
-	public String toString() {
-	    return "[name=" + this.name + ", price=" + this.price + "]";
-	}
+	
 }

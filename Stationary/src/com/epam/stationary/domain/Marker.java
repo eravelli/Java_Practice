@@ -1,6 +1,6 @@
 package com.epam.stationary.domain;
 
-public class Marker implements StarterKit,Comparable<Marker>{
+public class Marker implements StarterKit{
 	 private String name;
 	 
 	 private int price;
@@ -27,12 +27,5 @@ public class Marker implements StarterKit,Comparable<Marker>{
 		this.price = price;
 	}
 	
-	@Override
-	public int compareTo(Marker o) {
-		return (int) (this.price - o.price);
-	}
-
-	public String toString() {
-	    return "[name=" + this.name + ", price=" + this.price + "]";
-	}
+	
 }

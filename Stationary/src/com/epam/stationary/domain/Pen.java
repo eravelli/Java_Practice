@@ -1,6 +1,6 @@
 package com.epam.stationary.domain;
 
-public class Pen implements StarterKit,Comparable<Pen>{
+public class Pen implements StarterKit{
 	 private String name;
 	 
 	 private int price;
@@ -25,12 +25,5 @@ public class Pen implements StarterKit,Comparable<Pen>{
 		this.price = price;
 	}
 
-	@Override
-	public int compareTo(Pen o) {
-		return (int) (this.price - o.price);
-	}
 	
-	public String toString() {
-	    return "[name=" + this.name + ", price=" + this.price + "]";
-	}
 }

@@ -1,6 +1,6 @@
 package com.epam.stationary.domain;
 
-public class File implements StarterKit,Comparable<File>{
+public class File implements StarterKit{
  private String name;
  
  private int price;
@@ -27,13 +27,6 @@ public void setPrice(int price) {
 	this.price = price;
 }
 
-@Override
-public int compareTo(File o) {
-	return (int) (this.price - o.price);
-}
 
-public String toString() {
-    return "[name=" + this.name + ", price=" + this.price + "]";
-}
  
 }
