@@ -1,6 +1,6 @@
 package com.epam.stationary.domain;
 
-public interface StarterKit{
+public interface StationaryItems{
 		
 	
 	String getName();

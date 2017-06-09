@@ -1,6 +1,6 @@
 package com.epam.stationary.domain;
 
-public class Folder implements StarterKit{
+public class Folder implements StationaryItems{
 	 private String name;
 	 
 	 private int price;

@@ -1,6 +1,6 @@
 package com.epam.stationary.domain;
 
-public class StickNotes implements StarterKit{
+public class StickNotes implements StationaryItems{
 	 private String name;
 	 
 	 private int price;

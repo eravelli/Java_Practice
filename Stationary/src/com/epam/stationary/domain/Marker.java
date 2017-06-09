@@ -1,6 +1,6 @@
 package com.epam.stationary.domain;
 
-public class Marker implements StarterKit{
+public class Marker implements StationaryItems{
 	 private String name;
 	 
 	 private int price;

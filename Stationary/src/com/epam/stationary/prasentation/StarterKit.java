@@ -1,27 +1,28 @@
-package com.epam.stationary.domain;
+package com.epam.stationary.prasentation;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.epam.stationary.dao.StationaryData;
+import com.epam.stationary.domain.StationaryItems;
+import com.epam.stationary.services.NameComparator;
+import com.epam.stationary.services.PriceComparator;
+import com.epam.stationary.services.StarterkitComparatorByPriceAndName;
 
-public class Stationary {
+
+public class StarterKit {
 	
 	public static void main(String arg[]){
 		
-		List<StarterKit> kit = new ArrayList<>();
 		
-		kit.add(new Pen("Reynalod", 10));
-		kit.add(new Pencil("NatRaj", 7));
-		kit.add(new File("Cliper", 50));
-		kit.add(new Folder("ZipFolder", 120));
-		kit.add(new Marker("Black", 45));
-		kit.add(new StickNotes("Manoj", 65));
+		StationaryData sd = new StationaryData();
+		List<StationaryItems> kit = sd.data();
 		
-		
+		System.out.println("########################");
 		System.out.println("Sorting by Name...");
+		System.out.println("########################");
 		Collections.sort(kit,new NameComparator());  
-		for(StarterKit st: kit){  
+		for(StationaryItems st: kit){  
 		System.out.println(st.getName()+" "+st.getPrice()+" ");  
 		}  
 		
@@ -29,7 +30,7 @@ public class Stationary {
 		System.out.println("Sorting by Price......");
 		System.out.println("########################");
 		Collections.sort(kit,new PriceComparator());  
-		for(StarterKit st: kit){  
+		for(StationaryItems st: kit){  
 		System.out.println(st.getName()+" "+st.getPrice()+" ");  
 		}  
 		
@@ -37,9 +38,10 @@ public class Stationary {
 		System.out.println("Sorting by Price and Name...");
 		System.out.println("########################");
 		Collections.sort(kit,new StarterkitComparatorByPriceAndName());  
-		for(StarterKit st: kit){  
+		for(StationaryItems st: kit){  
 		System.out.println(st.getName()+" "+st.getPrice()+" ");  
 		}  
 	}
+	 
 
 }

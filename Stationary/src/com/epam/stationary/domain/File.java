@@ -1,6 +1,6 @@
 package com.epam.stationary.domain;
 
-public class File implements StarterKit{
+public class File implements StationaryItems{
  private String name;
  
  private int price;
