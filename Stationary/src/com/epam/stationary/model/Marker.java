@@ -1,11 +1,11 @@
-package com.epam.stationary.domain;
+package com.epam.stationary.model;
 
-public class Pencil implements StationaryItems{
+public class Marker implements StationaryItems{
 	 private String name;
 	 
 	 private int price;
 
-	 public Pencil(String name, int price) {
+	 public Marker(String name, int price) {
 	     this.name = name;
 	     this.price = price;
 	   
@@ -26,5 +26,6 @@ public class Pencil implements StationaryItems{
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	
 	
 }

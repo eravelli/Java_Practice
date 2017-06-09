@@ -1,14 +1,17 @@
-package com.epam.stationary.domain;
+package com.epam.stationary.model;
 
-public class Pen implements StationaryItems{
+public class Folder implements StationaryItems{
 	 private String name;
 	 
 	 private int price;
-	 public Pen(String name, int price) {
+
+	 public Folder(String name, int price) {
 	     this.name = name;
 	     this.price = price;
 	   
 	 }
+	 
+	 
 	public String getName() {
 		return name;
 	}
@@ -24,6 +27,6 @@ public class Pen implements StationaryItems{
 	public void setPrice(int price) {
 		this.price = price;
 	}
-
+	
 	
 }

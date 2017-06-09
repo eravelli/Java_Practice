@@ -1,8 +1,8 @@
-package com.epam.stationary.services;
+package com.epam.stationary.util;
 
 import java.util.Comparator;
 
-import com.epam.stationary.domain.StationaryItems;
+import com.epam.stationary.model.StationaryItems;
 
 public class PriceComparator implements Comparator<StationaryItems>{
 

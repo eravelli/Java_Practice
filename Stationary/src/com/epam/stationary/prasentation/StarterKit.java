@@ -4,15 +4,16 @@ import java.util.Collections;
 import java.util.List;
 
 import com.epam.stationary.dao.StationaryDao;
-import com.epam.stationary.domain.StationaryItems;
-import com.epam.stationary.services.NameComparator;
-import com.epam.stationary.services.PriceComparator;
-import com.epam.stationary.services.StarterkitComparatorByPriceAndName;
+import com.epam.stationary.exception.BaseException;
+import com.epam.stationary.model.StationaryItems;
+import com.epam.stationary.util.NameComparator;
+import com.epam.stationary.util.PriceComparator;
+import com.epam.stationary.util.StarterkitComparatorByPriceAndName;
 
 
 public class StarterKit {
 	
-	public static void main(String arg[]){
+	public static void main(String arg[])throws BaseException{
 		
 		
 		StationaryDao sd = new StationaryDao();

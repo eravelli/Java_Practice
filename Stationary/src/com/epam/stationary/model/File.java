@@ -1,4 +1,4 @@
-package com.epam.stationary.domain;
+package com.epam.stationary.model;
 
 public class File implements StationaryItems{
  private String name;

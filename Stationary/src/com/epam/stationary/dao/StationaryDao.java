@@ -3,13 +3,13 @@ package com.epam.stationary.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.epam.stationary.domain.File;
-import com.epam.stationary.domain.Folder;
-import com.epam.stationary.domain.Marker;
-import com.epam.stationary.domain.Pen;
-import com.epam.stationary.domain.Pencil;
-import com.epam.stationary.domain.StationaryItems;
-import com.epam.stationary.domain.StickNotes;
+import com.epam.stationary.model.File;
+import com.epam.stationary.model.Folder;
+import com.epam.stationary.model.Marker;
+import com.epam.stationary.model.Pen;
+import com.epam.stationary.model.Pencil;
+import com.epam.stationary.model.StationaryItems;
+import com.epam.stationary.model.StickNotes;
 
 public class StationaryDao {
   

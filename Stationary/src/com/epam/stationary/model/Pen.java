@@ -1,16 +1,14 @@
-package com.epam.stationary.domain;
+package com.epam.stationary.model;
 
-public class StickNotes implements StationaryItems{
+public class Pen implements StationaryItems{
 	 private String name;
 	 
 	 private int price;
-
-	 public StickNotes(String name, int price) {
+	 public Pen(String name, int price) {
 	     this.name = name;
 	     this.price = price;
 	   
 	 }
-	 
 	public String getName() {
 		return name;
 	}
@@ -26,5 +24,6 @@ public class StickNotes implements StationaryItems{
 	public void setPrice(int price) {
 		this.price = price;
 	}
+
 	
 }
