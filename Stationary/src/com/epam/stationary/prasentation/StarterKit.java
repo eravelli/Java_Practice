@@ -3,7 +3,7 @@ package com.epam.stationary.prasentation;
 import java.util.Collections;
 import java.util.List;
 
-import com.epam.stationary.dao.StationaryData;
+import com.epam.stationary.dao.StationaryDao;
 import com.epam.stationary.domain.StationaryItems;
 import com.epam.stationary.services.NameComparator;
 import com.epam.stationary.services.PriceComparator;
@@ -15,7 +15,7 @@ public class StarterKit {
 	public static void main(String arg[]){
 		
 		
-		StationaryData sd = new StationaryData();
+		StationaryDao sd = new StationaryDao();
 		List<StationaryItems> kit = sd.data();
 		
 		System.out.println("########################");

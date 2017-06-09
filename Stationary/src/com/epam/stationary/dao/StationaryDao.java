@@ -11,7 +11,7 @@ import com.epam.stationary.domain.Pencil;
 import com.epam.stationary.domain.StationaryItems;
 import com.epam.stationary.domain.StickNotes;
 
-public class StationaryData {
+public class StationaryDao {
   
 	public List<StationaryItems> data(){
 		List<StationaryItems> kit = new ArrayList<>();
