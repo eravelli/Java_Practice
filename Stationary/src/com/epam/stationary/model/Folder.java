@@ -10,23 +10,22 @@ public class Folder implements StationaryItems{
 	     this.price = price;
 	   
 	 }
-	 
-	 
+	
 	public String getName() {
 		return name;
 	}
 
-	/*public void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
-	}*/
+	}
 
 	public int getPrice() {
 		return price;
 	}
 
-	/*public void setPrice(int price) {
+	public void setPrice(int price) {
 		this.price = price;
-	}*/
+	}
 	
 	
 }
