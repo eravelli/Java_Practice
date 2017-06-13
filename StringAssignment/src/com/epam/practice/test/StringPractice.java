@@ -2,10 +2,56 @@ package com.epam.practice.test;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StringPractice {
+	
+	
+	public static void main(String args[]) {
 
-	public static StringBuilder removechar(String string,Character element){
+		Scanner keyboard = new Scanner(System.in);
+//		System.out.println("Please Enter the Text ");
+//		String s = keyboard.nextLine();
+		System.out.println("Please Enter Opening/Closing character  :");
+		String s="Sun rises in {This is test} East {this} sdfskafh {it} ppppp {ttttttttttttttttttttt}";
+		if(s != null && !s.equals("") && !s.isEmpty()){
+		String startChar = keyboard.nextLine();
+		String endChar = keyboard.nextLine();
+		System.out.println("Opening Character = " + startChar);
+		System.out.println("Closing Character = " + endChar);
+
+		keyboard.close();
+
+		
+
+		// Pattern p = Pattern.compile("\\{(.*?)\\}");
+
+		Pattern p = Pattern.compile("\\" + startChar + "(.*?)" + "\\" + endChar);
+		Matcher m = p.matcher(s);
+		int len = s.length();
+		String removeString = "";
+
+		while (m.find())
+
+		{
+			if (m.group(1).length() < len) {
+				len = m.group(1).length();
+				removeString = m.group(1);
+			}
+		}
+
+		System.out.println("Shortest String = " + removeString);
+		String removeStr = startChar + removeString + endChar;
+
+		System.out.println("Remove String = " + removeStr);
+		String manipString = s.replaceAll("\\" + removeStr, startChar + endChar);
+		System.out.println(" String final =" + manipString);
+		}
+
+	}
+
+	/*public static StringBuilder removechar(String string,Character element){
 	 	
 	 	char[] arr = string.toCharArray();
 	 	//blah blah,i used one string function,so what?
@@ -31,7 +77,7 @@ public class StringPractice {
 	}
 	public static void main(String args[]){
 		System.out.print(removechar("penicillin",'i'));
-	}
+	}*/
 	
 	
 	/*public static void main(String arg[]){
