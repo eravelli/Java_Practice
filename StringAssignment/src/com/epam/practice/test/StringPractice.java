@@ -8,24 +8,30 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 public class StringPractice {
 
 	public static void main(String args[]) {
 
+		StringPractice sp = new StringPractice();
 		Scanner keyboard = new Scanner(System.in);
-		// System.out.println("Please Enter the Text ");
-		// String s = keyboard.nextLine();
 		System.out.println("Please Enter Opening/Closing character  :");
-		String s = "Sun rises in {This is test} &you| East {this} sdfskafh (it) ppppp youtyty& |you|{ttttttttttttttttttttt}";
-		// if (s != null && !s.equals("") && !s.isEmpty()) {
+		String s = "Sun rises in {This is test} (you) East {this} sdfskafh (it) ppppp *youtyty* {ttttttttttttttttttttt}";
+
 		String startChar = keyboard.nextLine();
 		String endChar = keyboard.nextLine();
 		System.out.println("Opening Character = " + startChar);
 		System.out.println("Closing Character = " + endChar);
-		String regex = startChar + "(.*?)" + endChar;
-
+		
 		keyboard.close();
+		sp.manipulatedString(s,startChar,endChar);
+		
+		
+	}
+
+	private void manipulatedString(String s, String startChar, String endChar) throws PatternSyntaxException,StringIndexOutOfBoundsException{
+		String regex = startChar + "(.*?)" + endChar;
 		Pattern p;
 		if (s.contains(startChar) && s.contains(endChar)) {
 
@@ -34,44 +40,26 @@ public class StringPractice {
 			} else {
 				p = Pattern.compile("\\" + startChar + "(.*?)" + "\\" + endChar);
 			}
-			HashMap<String, String> regexMatcher= new HashMap<>();
+			HashMap<String, String> regexMatcher = new HashMap<>();
 
-			
-		    Matcher matcher = p.matcher(s);
+			Matcher matcher = p.matcher(s);
 
-		    while (matcher.find()){
-		    	String key = matcher.group(1);
-		    	String value = matcher.group(0);
-		    	regexMatcher.put(key, value);	
-		    }
-		    List<String> keys = new ArrayList<>();
-		    keys.addAll(regexMatcher.keySet());
-		    Collections.sort(keys, new StringLengthComparator());
-		    System.out.println(regexMatcher.get(keys.get(0)));
-
-/*			Matcher m = p.matcher(s);
-			int len = s.length();
-			String removeString = "";
-
-			while (m.find())
-
-			{
-				if (m.group(1).length() < len) {
-					len = m.group(1).length();
-					removeString = m.group(1);
-				}
+			while (matcher.find()) {
+				String key = matcher.group(1);
+				String value = matcher.group(0);
+				regexMatcher.put(key, value);
 			}
-
-			System.out.println("Shortest String = " + removeString);
-			String removeStr = startChar + removeString + endChar;
-
-			System.out.println("Remove String = " + removeStr);*/
-		    String removeStr = regexMatcher.get(keys.get(0));
-		    System.out.println("Remove String = " + removeStr);
+			List<String> keys = new ArrayList<>();
+			keys.addAll(regexMatcher.keySet());
+			Collections.sort(keys, new StringLengthComparator());
+//			System.out.println(regexMatcher.get(keys.get(0)));
+	
+			String removeStr = regexMatcher.get(keys.get(0));
+//			System.out.println("Remove String = " + removeStr);
 			int index = s.lastIndexOf(removeStr);
-			System.out.println(index);
+			/*System.out.println(index);
 			System.out.println(removeStr.length());
-			System.out.println(index + (removeStr.length()));
+			System.out.println(index + (removeStr.length()));*/
 			StringBuilder sb = new StringBuilder(s);
 
 			sb.delete(index + 1, index + (removeStr.length() - 1));
@@ -81,8 +69,6 @@ public class StringPractice {
 		} else {
 			System.out.println("Opening/Closed Character is not available in given text");
 		}
-
-		// }
 
 	}
 }
