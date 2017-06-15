@@ -3,6 +3,7 @@ package com.epam.stationary.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.epam.stationary.exception.BaseException;
 import com.epam.stationary.model.File;
 import com.epam.stationary.model.Folder;
 import com.epam.stationary.model.Marker;
@@ -13,7 +14,7 @@ import com.epam.stationary.model.StickNotes;
 
 public class StationaryDao {
   
-	public List<StationaryItems> data(){
+	public List<StationaryItems> data() throws BaseException{
 		List<StationaryItems> kit = new ArrayList<>();
 		
 		kit.add(new Pen("Reynalod", 10));
